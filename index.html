@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoSphere</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #f4fdf4;
+      color: #333;
+    }
+
+    nav {
+      background-color: #2e7d32;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-around;
+      position: sticky;
+      top: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .section {
+      padding: 2rem;
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 1rem;
+      margin: 1rem 0;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    button {
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a onclick="showTab('home')">Home</a>
+    <a onclick="showTab('reports')">Reports</a>
+    <a onclick="showTab('rewards')">Rewards</a>
+    <a onclick="showTab('you')">You</a>
+  </nav>
+
+  <section id="home" class="section active">
+    <h2>Welcome to EcoSphere</h2>
+    <div class="card">Carbon Emission Report: 1.8 tons saved this month</div>
+    <div class="card"><button>Recycle Product</button></div>
+    <div class="card"><button>Purchase Best Out of Waste</button></div>
+    <div class="card"><button>Contribute</button></div>
+    <div class="card">Sustainability Score Progress: 70%</div>
+  </section>
+
+  <section id="reports" class="section">
+    <h2>Global Carbon Emission Insights</h2>
+    <div class="card">Top Polluting Countries (Dummy Chart)</div>
+    <div class="card">Sector-wise Emissions (Dummy Chart)</div>
+    <div class="card">Year-on-Year Stats (Dummy Chart)</div>
+    <p>Dummy summary about global sustainability trends.</p>
+  </section>
+
+  <section id="rewards" class="section">
+    <h2>Your Green Rewards</h2>
+    <div class="card">You’ve earned 1,200 Green Points</div>
+    <div class="card"><button>Gym - 20% Off</button></div>
+    <div class="card"><button>E-Vehicle Discount</button></div>
+    <div class="card"><button>Membership Benefits</button></div>
+    <div class="card"><button>Other Benefits</button></div>
+  </section>
+
+  <section id="you" class="section">
+    <h2>Your Profile</h2>
+    <div class="card">
+      <p>Name: John Doe</p>
+      <p>Email: johndoe@example.com</p>
+      <p>Location: Delhi, India</p>
+      <p>Membership Tier: Gold</p>
+    </div>
+    <div class="card">
+      <p>Carbon Saved: 3.2 tons</p>
+      <p>Products Recycled: 18</p>
+      <p>Purchases Made: 5</p>
+      <p>Rewards Earned: 1,200</p>
+    </div>
+    <div class="card"><button>Edit Profile</button> <button>View History</button> <button>Log Out</button></div>
+  </section>
+
+  <script>
+    function showTab(tabId) {
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
+</body>
+
+</html>
